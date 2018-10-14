@@ -3,8 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import i18n from './i18n'
 import VueAMap from 'vue-amap'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
 Vue.use(router)
+Vue.use(ElementUI)
 Vue.use(VueAMap)
 // 初始化vue-amap
 VueAMap.initAMapApiLoader({
@@ -20,6 +25,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  i18n,
   components: { App },
   template: '<App/>'
 })
