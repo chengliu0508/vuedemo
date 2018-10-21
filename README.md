@@ -1,6 +1,7 @@
 # test
 
-> A Vue.js project
+>基于vue的demo
+引入 VueAMap，element，axios，i18n，sass
 
 ## Build Setup
 
