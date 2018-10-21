@@ -8,32 +8,29 @@
 
 <script>
 import axios from 'axios'
+import {apigetDiscList,foo} from '@/api'
 export default {
   name: 'infolist',
   data () {
     return {
       msg: 'infolist',
-      newsList: {}
+      newsList:[]
     }
   },
   methods: {
     getnewsList() {
-      var _this= this
-      this.newsList= axios({
-        method: 'get',
-        url: '/api/json',
-        params: {
-          ID: 12345
-        },
-        timeout: 10000,
-        responseType: 'json'
+      var hello = foo()
+      console.log(hello)
+      
+      apigetDiscList().then((res) => {
+        console.log(res)
       })
-      .then(function (response) {
-        _this.printnewsList(response.data) 
-      })     
     },
-    printnewsList(data){
-      console.log(data.a)
+    getfoo(){
+      foo()
+    },
+    greturndata(data){
+      return data
     }
   }
 }

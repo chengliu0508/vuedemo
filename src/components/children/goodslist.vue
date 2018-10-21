@@ -19,7 +19,13 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped="" type="text/css">
+//你的sass语言
+
+$primary-color: #e21313;
+
+.hello {
+  color: $primary-color;  //编译后就成了 color:#333;类似于js的变量！
+}
 
 </style>
