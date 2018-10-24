@@ -20,7 +20,7 @@ const createLintingRule = () => ({
 })
 
 module.exports = {
-  context: path.resolve(__dirname, '../'),
+  context: path.resolve(__dirname, '../'), // Webpack 在寻找相对路径的文件时会以context 为根目录
   entry: {
     app: './src/main.js'
   },
@@ -29,7 +29,7 @@ module.exports = {
     filename: '[name].js',
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+      : config.dev.assetsPublicPath // 加载这些异步资源需要对应的URL 地址。
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],

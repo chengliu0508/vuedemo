@@ -4,16 +4,28 @@
     <i class="el-icon-edit"></i>
     <i class="el-icon-share"></i>
     <i class="el-icon-delete"></i>
-    <el-button type="primary" icon="el-icon-search">搜索</el-button>
+    <el-button type="primary" @click='changetestdata' icon="el-icon-search">修改state.test</el-button>
+    <p><span>store里面test数据为：</span>{{getterstest}}</p>
   </div>
 </template>
 
 <script>
+import {mapGetters, mapActions} from 'vuex';
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'goodslist'
+    }
+  },
+  computed: {
+    getterstest () {
+      return this.$store.getters.getterstest
+    }
+  },
+  methods: {
+    changetestdata(){
+      this.$store.dispatch('changedata','hello')
     }
   }
 }
