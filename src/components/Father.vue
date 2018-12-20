@@ -11,9 +11,6 @@
         <router-view></router-view>
       </keep-alive>
     </div>
-    <div class="app-foot">
-      <p>© 2018 fishenal MIT</p>
-    </div>
   </div>
 </template>
 <script>
@@ -29,23 +26,14 @@ export default {
 
 <style>
   .app-head {
-    background: #42c51a;
     color: #b2b2b2;
-    height: 90px;
-    line-height: 90px;
+    height: 30px;
+    line-height: 30px;
     width: 100%;
   }
   .nav-list li {
     cursor: pointer;
     float: left;
     padding-left:50px;
-  }
-  .app-foot {
-    text-align: center;
-    height: 80px;
-    width: 100%;
-    line-height: 80px;
-    background: #5f6a94;
-    margin-top: 30px;
   }
 </style>

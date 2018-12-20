@@ -1,14 +1,23 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <keep-alive>
-      <router-view></router-view>
-    </keep-alive>
+    <Header></Header>
+    <div class='contain'>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </div>
+    <Footer></Footer>
   </div>
 </template>
 <script>
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 export default {
-  data () {
+  components: {
+    Header,
+    Footer
+  },
+  data (){
     return {
       zoom: 12
     }
@@ -20,9 +29,12 @@ export default {
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  margin-top: 60px;
+  font-size:14px;
+  margin:0;
+}
+.contain{
+  max-width:1100px;
+  min-height:450px;
+  margin: 0 auto;
 }
 </style>

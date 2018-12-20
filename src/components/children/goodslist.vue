@@ -19,7 +19,7 @@ export default {
     }
   },
   computed: {
-    getterstest () {
+    getterstest (){
       return this.$store.getters.getterstest
     }
   },
