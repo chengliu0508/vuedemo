@@ -25,16 +25,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped type="text/css">
+@import '@/components/plugin/style/index.scss'
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  font-size:14px;
-  margin:0;
-}
-.contain{
-  max-width:1100px;
-  min-height:450px;
-  margin: 0 auto;
-}
 </style>

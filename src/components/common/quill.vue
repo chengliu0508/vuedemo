@@ -1,22 +1,45 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <quill-editor
+    v-model="content"
+    ref="myQuillEditor"
+    :options="editorOption"
+    @blur="onEditorBlur($event)"
+     @focus="onEditorFocus($event)"
+    >    
+    </quill-editor>
   </div>
 </template>
 
 <script>
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+import { quillEditor } from 'vue-quill-editor'
+
 export default {
-  name: 'editor',
+  name: 'quill',
+  components: {
+    quillEditor
+  },
   data () {
     return {
-      zoom: 12,
-      msg: 'Welcome to Your gaode'
+      content: '',
+      editorOption : {}
+    }
+  },
+  methods:{
+    onEditorBlur(editor) {
+      console.log(this.content)
+    },
+    onEditorFocus(editor) {
+      editor.enable(true)   // 实现达到上限字符可删除
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
 </style>

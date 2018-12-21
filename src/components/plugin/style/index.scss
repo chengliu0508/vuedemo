@@ -1,0 +1,51 @@
+@import "./base.scss";
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-size:14px;
+    margin:0;
+  }
+.contain{
+    max-width:1000px;
+    min-height:450px;
+    margin: 0 auto;
+}
+.header {
+  font-size:18px;
+  height:70px;
+  img{
+    float:left;
+    width:60px;
+    height:40px;
+  }
+  .header .link-list{
+    height:100%;
+    vertical-align: center;
+    a{
+      font-size:20px;
+      line-height:40px;
+      vertical-align: center;
+      padding-left:20px;
+    }
+  }
+  .el-menu-demo{
+    background: $color-success;
+  }
+}
+
+  @mixin table-scaffolding {
+    th {
+      text-align: center;
+      font-weight: bold;
+    }
+    td, th { padding: 2px; }
+  }
+  
+  @mixin left($dist) {
+    float: left;
+    margin-left: $dist;
+  }
+  
+  #data {
+    @include left(10px);
+    @include table-scaffolding;
+  }

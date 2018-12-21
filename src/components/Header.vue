@@ -1,12 +1,6 @@
 <template>
   <div class="header">
     <img src="../assets/logo.png">
-    <!-- <div class='link-list'>
-      <router-link :to="{path: '/'}"><span>{{home}}</span></router-link>
-      <router-link :to="{path: '/father'}"><span>{{link1}}</span></router-link>
-      <router-link :to="{path: '/editor'}"><span>{{editor}}</span></router-link>
-      <router-link :to="{path: '/step'}"><span>{{step}}</span></router-link>
-    </div> -->
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
       <el-menu-item index="1">
         <router-link :to="{path: '/'}"><span>{{home}}</span></router-link>
@@ -59,25 +53,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.header {
-  background: yellowgreen;
-  padding:10px 60px;;
-  height:40px;
-}
-.header img{
-  float:left;
-  width:60px;
-  height:40px;
-}
-.header .link-list{
-  height:100%;
-  vertical-align: center;
-}
-.header .link-list a{
-  font-size:20px;
-  line-height:40px;
-  vertical-align: center;
-  padding-left:20px;
-}
+<style lang="scss" scoped type="text/css">
+@import '@/components/plugin/style/index.scss';
+
+
 </style>
