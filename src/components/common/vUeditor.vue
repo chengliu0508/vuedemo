@@ -6,7 +6,7 @@
 <script>
 import $ from '../../../static/umeditor/third-party/jquery.js'
 window.$ = window.jQuery = $
-window.UMEDITOR_HOME_URL = '//jakelaoyu.github.io/v-umeditor/static/'  //jakelaoyu.github.io/v-umeditor/static/
+window.UMEDITOR_HOME_URL = 'static/umeditor'  //jakelaoyu.github.io/v-umeditor/static/
 require('../../../static/umeditor/umeditor.config.js')
 require('../../../static/umeditor/umeditor.js')
 
@@ -23,7 +23,10 @@ export default {
     },
     config: {
       type: Object,
-      default: () => {}
+      default: () => {toolbars: [
+          ['fullscreen', 'source', 'undo', 'redo'],
+          ['bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc']
+      ]}
     },
     id: {
       type: String,

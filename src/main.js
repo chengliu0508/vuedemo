@@ -1,31 +1,22 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
 import router from './router'
 import i18n from './i18n'
-import VueAMap from 'vue-amap'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import './assets/style.css'
 import axios from 'axios'
+import echarts from 'echarts'
 import store from './store'
 
 Vue.prototype.$api = axios
+Vue.prototype.$echarts = echarts
 
 Vue.use(router)
 Vue.use(ElementUI)
-Vue.use(VueAMap)
-// 初始化vue-amap
-VueAMap.initAMapApiLoader({
-  // 高德的key
-  key: 'YOUR_KEY',
-  // 插件集合
-  plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType', 'AMap.PolyEditor', 'AMap.CircleEditor'],
-  // 高德 sdk 版本，默认为 1.4.4
-  v: '1.4.4'
-})
+
 Vue.config.productionTip = false
-/* eslint-disable no-new */
+
 var vm = new Vue({
   el: '#app',
   router,

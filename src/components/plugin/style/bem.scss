@@ -1,0 +1,49 @@
+$namespace:'rm';
+$selector:&;
+$selector-separate:'-';
+$element-separate:'__';
+$modifier-separate:'--';
+$state-prefix:'is-';
+@mixin b($block){
+    $B:#{$namespace+$selector-separate+$block} !global;
+    .#{$B}{
+        @content;
+    }
+}
+@mixin e($element){
+    $current-selector:'';
+    @each $unit in $element{
+        $current-selector:#{$current-selector+&+$element-separate+$unit+','}
+    }
+    @at-root #{$current-selector}{
+        @content;
+    }
+}
+@mixin m($modifier){
+    $current-selector:'';
+    @each $unit in $modifier{
+        $current-selector:#{$current-selector+&+$modifier-separate+$unit+','}
+    }
+    @at-root #{$current-selector}{
+        @content;
+    }
+}
+@mixin when($state){
+    @at-root {
+        &.#{$state-prefix+$state}{@content;}
+    }
+}
+
+@include b(button){
+    color:#fff;
+    @include m(primary){
+        color:green;
+    }
+    @include m(info){
+        color:#fafafa;
+    }
+    @include when(disabled){
+        color:#dedede;
+        cursor: not-allowed;
+    }
+}

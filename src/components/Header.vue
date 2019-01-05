@@ -23,9 +23,12 @@
         </el-submenu>
       </el-submenu>
       <el-menu-item index="3">
-        <router-link :to="{path: '/editor'}"><span>{{editor}}</span></router-link>
+        <router-link :to="{path: '/echart'}"><span>{{echart}}</span></router-link>
       </el-menu-item>
       <el-menu-item index="4">
+        <router-link :to="{path: '/editor'}"><span>{{editor}}</span></router-link>
+      </el-menu-item>
+      <el-menu-item index="5">
         <router-link :to="{path: '/step'}"><span>{{step}}</span></router-link>
       </el-menu-item>
     </el-menu>
@@ -39,6 +42,7 @@ export default {
     return {
       home: '首页',
       link1: '活动',
+      echart:'图表',
       editor: '编辑器',
       step: '步骤条',
       activeIndex: '1',

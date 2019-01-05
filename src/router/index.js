@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import step from '@/components/step'
 import Father from '@/components/Father'
 import Editor from '@/components/editor'
+import Echart from '@/components/list3/echart'
 import goodslist from '@/components/children/goodslist'
 import infolist from '@/components/children/infolist'
 
@@ -13,6 +14,7 @@ export default new Router({
   routes: [
     {path: '/', name: 'Home', component: Home},
     {path: '/step', name: 'step', component: step},
+    {path: '/echart', name: 'echart', component: Echart},
     {path: '/editor', name: 'editor', component: Editor},
     {
       path: '/father',

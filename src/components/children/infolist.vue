@@ -1,10 +1,11 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <span class="icon-home"></span><span class="icon-spades"></span><span class="icon-pacman"></span>
     <p>{{ $t("message.hello") }}</p>
     <el-button @click='getnewsList' type="primary" icon="el-icon-edit">getnewsList</el-button>
     <ul>
-        <li v-for="(item, index) in newsList" :index='index' class="item">
+        <li v-for="(item, index) in newsList" :key='index' class="item">
           <span>{{item.name}}</span><span>{{item.news}}</span><span>{{item.date}}</span>
         </li>
     </ul>
