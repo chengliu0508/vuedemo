@@ -72,3 +72,73 @@
 </body>
 
 </html>
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>animation tranform</title> 
+<style>
+  #box1 {
+    height: 100px;
+    width: 100px;
+    left:200px;
+    background: green;
+    /* transition: background 2s ease,transform 2s ease-in 1s; */
+    transform:translate3d(50px, 0, 0);
+    transition:transform 3s ease-in-out ;
+    /*transition-property transition-duration transition-timing-function运动速率*/
+  }
+  /* #box1:hover{background:red;transform:rotate(180deg) scale(.5,.5);} */
+  #box1:hover{transform:translate3d(100px, 0, 0);}
+
+  .box2 {
+    height:100px;width:100px;border:15px solid black;
+    animation: changebox 10s ease-in-out  3 alternate paused;
+    /*animation-name animation-duration animation-timing-function 
+    animation-delay animation-iteration-count循环资料 animation-direction动画方式*/
+    /*
+      animation-iteration-count = infinite | number
+
+      animation-fill-mode(定义元素动画结束以后或者未开始的元素样式)
+      默认值为none，标示，不会在动画结束或者未开始时给元素 添加样式 
+      （1）forwards:表示动画结束后，元素直接接使用当前样式。
+      （2）backwards:表示在动画延迟时间元素使用关键帧中from的属性值或者to属性值（当animation-direction为reverse或者alternate-reverse时）
+          
+
+      animation-direction: normal 正序播放
+      animation-direction: reverse 倒序播放
+      animation-direction: alternate 交替播放
+      animation-direction: alternate-reverse 反向交替播放
+
+      animation-play-state = running | paused
+    */
+  }
+  .box2:hover {
+    animation-play-state: running;
+  }
+  @keyframes changebox {
+    10% {  background:red;  }
+    50% {  width:80px;  }
+    70% {  border:15px solid yellow;  }
+    100% {  width:180px;  height:180px;  }
+
+    /* from {left:0px;}
+    to {left:200px;} */
+  }
+</style>
+</head>
+<body>
+<div>
+
+  <div id="box1">transform</div>
+  <div class="box2">animation</div>
+
+</div>
+
+<script>
+ 
+
+</script>
+
+</body>
+</html>
